@@ -1,0 +1,51 @@
+1632392675973	Rename type 'CreditCard'
+1632392700082	Copy compilation unit
+1632393051708	Copy compilation unit
+1632397785095	Move file
+1632397790002	Delete element
+1632458397463	Rename package 'com.xoriant.springcoreapp.di'
+1632458436254	Rename type 'SpringBeanDiMain'
+1632458463752	Rename package 'com.xoriant.springcoreapp.constructor'
+1632458482332	Rename type 'SpringBeanConstructorMain'
+1632458500401	Rename resource 'spring_bean_di.xml'
+1632458516548	Copy package
+1632458536785	Rename type 'SpringBeanDiConstructorMain'
+1632458587949	Copy file
+1632460059599	Copy file
+1632460083408	Copy package
+1632460098652	Rename package 'com.xoriant.springcoreapp.di.collection.copy'
+1632460121385	Rename type 'SpringBeanDiConstructorMain'
+1632460214779	Delete element
+1632460231650	Copy file
+1632460465497	Delete element
+1632460469341	Delete element
+1632460475605	Copy file
+1632460478367	Delete element
+1632460485984	Rename resource 'spring_bean_di_setter2.xml'
+1632461164596	Rename resource 'spring_bean_di_collection.out.xml'
+1632461188897	Delete element
+1632461248889	Delete element
+1632461254172	Delete element
+1632461262757	Copy file
+1632461269937	Delete element
+1632461276851	Rename resource 'spring_bean_di_setter2.xml'
+1632462094866	Copy package
+1632462110734	Copy file
+1632462147051	Rename type 'SpringBeanDiCollectionMain'
+1632463810511	Copy file
+1632463813212	Delete element
+1632463824961	Rename resource 'spring_bean_di_setter2.xml'
+1632464353253	Copy file
+1632464364076	Copy package
+1632464389634	Rename type 'SpringBeanDiSetterMain'
+1632466632693	Copy package
+1632466653532	Rename type 'SpringBeanDiSetterMain'
+1632466678136	Copy file
+1632466689162	Rename resource 'spring_bean_di_setter2.xml'
+1632474342287	Rename resource 'spring_bean_di_setter.xml'
+1632476863730	Copy package
+1632476885735	Rename type 'SpringBeanDiSetterMain'
+1632476918237	Copy file
+1632478065222	Copy package
+1632478104378	Rename type 'SpringBeanDiSetterMain'
+1632483410463	Copy file

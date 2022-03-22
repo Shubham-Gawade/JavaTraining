@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Constructor Injection with Index -->
+	<bean id="account1" class="com.xoriant.springcoreapp.di.constructor.Account">
+		<constructor-arg index="0" value="12345"></constructor-arg>
+		<constructor-arg index="1" value="Shubham"></constructor-arg>
+		<constructor-arg index="2" value="50000"></constructor-arg>
+	</bean>
+
+	<!-- Constructor Injection with Name -->
+	<bean id="account2" class="com.xoriant.springcoreapp.di.constructor.Account">
+		<constructor-arg name="accountNumber" value="12345"></constructor-arg>
+		<constructor-arg name="accountName" value="Shubham"></constructor-arg>
+		<constructor-arg name="balance" value="50000"></constructor-arg>
+	</bean>
+	
+	<!-- Constructor Injection with type -->
+	<bean id="account3" class="com.xoriant.springcoreapp.di.constructor.Account">
+		<constructor-arg type="int" value="12345"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="Shubham"></constructor-arg>
+		<constructor-arg type="double" value="50000"></constructor-arg>
+	</bean>
+	
+	<!-- Constructor Injection with Name And Ref-->
+	<bean id="account4" class="com.xoriant.springcoreapp.di.constructor.Account">
+		<constructor-arg name="accountNumber" value="12345"></constructor-arg>
+		<constructor-arg name="accountName" value="Shubham"></constructor-arg>
+		<constructor-arg name="balance" value="50000"></constructor-arg>
+		<constructor-arg name="address" ref="addressBean"></constructor-arg>
+	</bean>
+	
+	<!-- Constructor Injection with for Ref Address -->
+	<bean id="addressBean" class="com.xoriant.springcoreapp.di.constructor.Address">
+		<constructor-arg name="streetNumber" value="30"></constructor-arg>
+		<constructor-arg name="streetName" value="VimanNagar"></constructor-arg>
+		<constructor-arg name="city" value="Pune"></constructor-arg>
+	</bean>
+</beans>

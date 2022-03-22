@@ -1,0 +1,216 @@
+Create maven project
+group id - com.xoriant
+artiifact id - SpringMVC-App
+packaging - war
+
+Finish
+
+Error in pom.xml
+Add properties in project tab
+
+<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
+
+Error web.xml missing for war packaging
+Right click on project -> Java EE tools -> Generate deployment descriptor
+Web.xml generated
+
+Error in pom.xml
+Could not initialize class org.apche.maven
+
+<build>
+      <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.1</version>
+        </plugin>
+    </plugins>
+    <finalName>hrmanagement-web</finalName>
+</build>
+
+Change Filename
+Add inside project tab
+
+Right click on project ->Maven -> Update Project
+
+Still Error in web.xml
+
+Right click on project ->properties-> project facets
+Change dynamic web module to -> 3.0
+In Runtime -> Apache Tomcat 8.5
+Come to web.xml
+Change in schemaLocation -> http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0"
+
+If still create problems then add ";" after each j2ee in schemaLocation
+or replace j2ee with javaee.
+
+Create index.jsp in webapp
+To Print Hello Spring
+And Run Project to check.
+
+Now,we create pages folder in WEB-INF and index.jsp inside pages
+then web pages are not publiclly available.
+
+We need to do mapping to access that pages in web.xml
+
+Now, We are creating common servlet is Dispatcher Servlet.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee; http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/javaee; http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>SpringMVC-App</display-name>
+  <servlet>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>spring</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+DispatcherServlet defind in org.springframework.web.servlet
+
+For this we have to add dependency in pom.xml
+
+<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<spring.version>5.1.11.RELEASE</spring.version>
+</properties>
+
+<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+</dependencies>
+
+If error for spring version the use lesser version
+
+After that we will get Error spring name
+
+Now, we have to create xml file in WEB-INF
+Prefix is spring and suffix is servlet
+i.e -> spring-servlet.xml
+When DispatcherServlet loads it will call configuration file i.e spring-servlet.xml
+Spring Searches for *-servlet.xml
+
+Add Schema Defination in spring-servlet.xml
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.xoriant" />
+
+Any of the classes associated with @Controller @Service And @Repository in base-package="com.xoriant" 
+instansiated with context:component-scan
+
+Now we create a POJO class in which we will do request mapping.
+
+EmployeeController.class in com.xoriant.hrmanagement.controller
+DispatcherServlet will find this class.
+
+
+@Controller
+public class EmployeeController {
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)  //default method is GET
+	public String index() {
+		return "index";
+		
+	}
+
+}
+
+@Controller @Service And @Repository All are sub classes of @Component
+@RequestMapping only work with @Controller
+
+Function is returning name of jsp page in String format. now we have to declare where that 
+jsp file is present. we will do this using InternalResourceViewResolver.
+
+Update spring-servlet.xml
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.xoriant" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+Our Spring MVC Application is Running.
+
+retuest -> web.xml -> DispatcherServlet -> spring-servlet.xml -> EmployeeController ->
+InternalResourceViewResolver -> "WEB-INF/pages/index.jsp" -> loading index.jsp
+-> response send to requested url
+
+===========================================================================================
+
+Database Connectivity
+
+First declare jdbcTemplate in DaoImpl class And make it Autowired.
+
+@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+then, Database Connection required properties declare in spring-servlet.xml inside beans tab.
+
+<!-- Data Source Bean -->
+	<bean id="datasource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/hrmanagement" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+	</bean>
+	
+	<!-- Inject the datasouce to JdbcTemplet bean -->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="datasource" />
+	</bean>
+	
+then, Add dependancies in pom.xml
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.2.1</version>
+			<scope>compile</scope>
+		</dependency>

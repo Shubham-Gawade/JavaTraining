@@ -1,0 +1,16 @@
+127.0.0.1 - - [30/Sep/2021:09:43:00 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:43:02 +0530] "GET /CompanyProductApp/ HTTP/1.1" 200 586
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:43:10 +0530] "POST /CompanyProductApp/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:43:11 +0530] "GET /CompanyProductApp/dashboard.jsp HTTP/1.1" 500 2409
+127.0.0.1 - - [30/Sep/2021:09:45:10 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:45:11 +0530] "GET /CompanyProductApp/ HTTP/1.1" 200 586
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:46:58 +0530] "POST /CompanyProductApp/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:46:58 +0530] "GET /CompanyProductApp/dashboard.jsp HTTP/1.1" 200 433
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:47:12 +0530] "GET /CompanyProductApp/dashboard.jsp HTTP/1.1" 200 433
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:47:14 +0530] "GET /CompanyProductApp/dashboard.jsp HTTP/1.1" 200 433
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:47:48 +0530] "GET /CompanyProductApp/dashboard.jsp HTTP/1.1" 200 433
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:47:48 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+127.0.0.1 - - [30/Sep/2021:09:48:53 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:48:54 +0530] "GET /CompanyProductApp/ HTTP/1.1" 200 586
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:49:00 +0530] "POST /CompanyProductApp/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Sep/2021:09:49:01 +0530] "GET /CompanyProductApp/dashboard.jsp HTTP/1.1" 500 2409

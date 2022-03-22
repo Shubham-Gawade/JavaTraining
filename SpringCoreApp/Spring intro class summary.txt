@@ -1,0 +1,78 @@
+Spring Framework-> Is a light weight framework to develop enterprise applications -> Webserver
+EJB -> Enterprise Java Bean -> To deploy we need an application server
+													-> Web server (Respond the request HTML if JSP is used)
+													-> Bussines component
+													-> JBOSS, Web Sphere, Glashfish, Jetty
+Spring Core
+===============
+IOC -> Inverse Of Control
+=> DI -> Dependency Injection (Interface will be injected with an object which is created and managed by spring container without explict creation of object using new keyword)
+
+
+Java Technology?
+-> Development environment
+-> Deployment environment
+-> Test environment
+->
+
+
+
+
+
+
+1. Credit Card to perform transaction on amount
+
+There is a need to write code to interface and for that we need to resolve the object
+which needs to be injected by using constructor/ setter method
+1. Using constructor is called constructor injection
+2. using setter is called setter injection
+
+Solution provided by Spring is through IOC container
+IOC -> Inverse of control is a implemetation which creates the object
+called bean by the spring container and inject to the required object.
+
+	->BeanFactory (I)
+	->ApplicationContext (I) it extends BeanFactory and provides
+	additonal capabilities
+	
+	The implementations to the Context are
+	-> ClassPathXmlApplicationContext
+	->FileSystemXmlApplicationContext
+	->AnnotationConfigApplicationContext 
+	
+
+	
+	
+IOC
+Constructor Injection
+Setter Injection
+ref or inline bean declaration
+Dealing with Collection
+Dealing with Inheritance
+Life Cycle of Bean
+Scoping of Bean
+	Singleton which is default scope by spring container
+	Prototype which explicit set is required
+Autowiring XML way
+	Default -> byType
+	byType
+	byName
+	constructor
+Using annotation configuration
+	@Component, 
+	@Service, 
+	@Repository,
+	@Controller
+	@Configuration, @Qualifiers, @Required, @Bean
+Dealing with Properties and Messages
+	@Value
+
+	
+Spring MVC
+AOP
+	
+	
+	
+	
+	
+	

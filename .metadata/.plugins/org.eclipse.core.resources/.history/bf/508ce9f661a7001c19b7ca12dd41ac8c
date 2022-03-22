@@ -1,0 +1,35 @@
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Assignment 
+{
+	public static int findMinAbsDiff(int[] S, int n, int S1, int S2,
+            Map<String, Integer> lookup)
+	{
+		if (n < 0) {
+		return Math.abs(S1 - S2);
+	}
+
+	String key = n + "|" + S1;
+
+	if (!lookup.containsKey(key))
+	{
+		int inc = findMinAbsDiff(S, n - 1, S1 + S[n], S2, lookup);
+	
+		int exc = findMinAbsDiff(S, n - 1, S1, S2 + S[n], lookup);
+	
+		lookup.put(key, Integer.min(inc, exc));
+	}
+	return lookup.get(key);
+	}
+
+	public static void main(String[] args)
+	{
+		int[] S = { 10, 20, 15, 5, 25 };
+
+		Map<String, Integer> lookup = new HashMap<>();
+
+		System.out.println(findMinAbsDiff(S, S.length - 1, 0, 0, lookup));
+		}
+}

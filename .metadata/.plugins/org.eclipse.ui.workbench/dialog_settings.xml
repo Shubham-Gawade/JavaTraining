@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.springsource.ide.eclipse.commons.gettingstarted.wizard.boot.NewSpringBootWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.springsource.ide.eclipse.boot.wizards.category"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="D:\JavaTrg-workspace\xorbankonline-hibernateWeb"/>
+			<item value="C:\Users\Shubham Gawade\Documents\src"/>
+			<item value="D:\Java-Notes\ThreadsSpringDemo"/>
+			<item value="D:\Java-Notes\src\main\java\com\xoriant\companyorderapp\entities"/>
+			<item value="D:\Java-Notes\CollectionDemo\src"/>
+			<item value="C:\Users\Shubham Gawade\Downloads\CollectionDemo\CollectionDemo"/>
+			<item value="C:\Users\Shubham Gawade\Downloads\IODemos\IODemos"/>
+			<item value="C:\Users\Shubham Gawade\Desktop\Training\Model"/>
+			<item value="C:\Users\Shubham Gawade\Downloads\OOCaseStudy3"/>
+		</list>
+	</section>
+</section>

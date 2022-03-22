@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>CompanyProductApp</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>com.xoriant.companyproductapp.controller.Login</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DashboardController</servlet-name>
+  	<servlet-class>com.xoriant.companyproductapp.controller.Dashboard</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DashboardController</servlet-name>
+  	<url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>CompanyController</servlet-name>
+  	<servlet-class>com.xoriant.companyproductapp.controller.CompanyController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>CompanyController</servlet-name>
+  	<url-pattern>/company</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ProductController</servlet-name>
+  	<servlet-class>com.xoriant.companyproductapp.controller.ProductController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ProductController</servlet-name>
+  	<url-pattern>/product</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>
